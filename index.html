@@ -1,608 +1,731 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Craftify - passion &amp; care</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<meta name="description" content=" ... add description here ... " />
-	<meta name="keywords" content=" ... add keywords here ... " />
-	
-	<!-- //////// Favicon ////////  -->
-	
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  />
-	
-	<!-- //////// Css StyleSheets ////////  -->
-	
-	<link href="_layout/screen-style.css" rel="stylesheet" type="text/css" />
-	<link href="_layout/print-style.css" rel="stylesheet" type="text/css" media="print" />
-	
-	<!-- //////// DD_belatedPNG - Png Fix for IE 6 ////////  -->
-	
-	<!--[if lt IE 7]>
-	<script type="text/javascript" src="_layout/js/DD_belatedPNG_0.0.7a-min.js"></script>
-	<script type="text/javascript">
+    <title>Craftify - passion &amp; care</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	</script>
-	<![endif]-->
-	
-	<!-- //////// jQuery ////////  -->
-	
-	<script src="_layout/js/jquery-1.3.1.min.js" type="text/javascript"></script>
+    <meta name="description" content=" ... add description here ... "/>
+    <meta name="keywords" content=" ... add keywords here ... "/>
 
-	<!-- //////// Cufon Font Replacement ////////  -->
-	
-	<script src="_layout/js/cufon-yui.js" type="text/javascript"></script>
-	<script src="_layout/js/Aller.font.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		Cufon.replace('h1');
-		Cufon.replace('.item h2');
-		Cufon.replace('h2.cv-section-name');
-	</script>
-	
-	<!-- //////// FancyBox - jQuery powered Lightbox ////////  -->
-	
-	<link rel="stylesheet" type="text/css" href="_layout/js/fancybox/jquery.fancybox-1.2.6.css" media="screen" />
-	<script type="text/javascript" src="_layout/js/fancybox/jquery.fancybox-1.2.6.pack.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("a.lightbox").fancybox({
-				'overlayOpacity': 0.7,
-				'overlayColor'	: '#333'
-			});
-		});
-	</script>
-	 
-	<!-- //////// Tipsy - custom Tooltips ////////  -->
-	
-	<link rel="stylesheet" type="text/css" href="_layout/js/tipsy/tipsy.css" />
-	<script type="text/javascript" src="_layout/js/tipsy/jquery.tipsy.js"></script>
-	<script type='text/javascript'>
-	  $(function() {
-		$('.tip').tipsy({gravity: 'n'});
-	  });
-	</script>
-	
-	<!-- //////// Email Me Panel Animation ////////  -->
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$(".emailme").click(function(){
-				$(".panel").toggle("fast");
-				$(this).toggleClass("active");
-				return false;
-			});
-		});
-	</script>
-	
-	<!-- //////// Contact Form ////////  -->
-	
-	<script type="text/javascript">                                         
-	/* <![CDATA[ */
-		$(document).ready(function(){ // sends the data filled in the contact form to the php file and shows a message
-			$("#contact-form").submit(function(){
-				var str = $(this).serialize();
-				$.ajax({
-				   type: "POST",
-				   url: "_layout/php/send.php",
-				   data: str,
-				   success: function(msg)
-				   {
-						$("#formstatus").ajaxComplete(function(event, request, settings){
-							if(msg == 'OK'){ // Message Sent? Show the 'Thank You' message and hide the form
-								result = '<div class="formstatusok">Your message has been sent. Thank you!</div>';
-								$("#fields").hide();
-							}
-							else{
-								result = msg;
-							}
-							$(this).html(result);
-						});
-					}
-				
-				 });
-				return false;
-			});
-		});
-	/* ]]> */	
-	</script>  
-		
+    <!-- //////// Favicon ////////  -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <!-- //////// Css StyleSheets ////////  -->
+
+    <link href="_layout/screen-style.css" rel="stylesheet" type="text/css"/>
+    <link href="_layout/print-style.css" rel="stylesheet" type="text/css" media="print"/>
+
+    <!-- //////// DD_belatedPNG - Png Fix for IE 6 ////////  -->
+
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="_layout/js/DD_belatedPNG_0.0.7a-min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <![endif]-->
+
+    <!-- //////// jQuery ////////  -->
+
+    <script src="_layout/js/jquery-1.3.1.min.js" type="text/javascript"></script>
+
+    <!-- //////// Cufon Font Replacement ////////  -->
+
+    <script src="_layout/js/cufon-yui.js" type="text/javascript"></script>
+    <script src="_layout/js/Aller.font.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Cufon.replace('h1');
+        Cufon.replace('.item h2');
+        Cufon.replace('h2.cv-section-name');
+    </script>
+
+    <!-- //////// FancyBox - jQuery powered Lightbox ////////  -->
+
+    <link rel="stylesheet" type="text/css" href="_layout/js/fancybox/jquery.fancybox-1.2.6.css" media="screen"/>
+    <script type="text/javascript" src="_layout/js/fancybox/jquery.fancybox-1.2.6.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.lightbox").fancybox({
+                'overlayOpacity': 0.7,
+                'overlayColor'    : '#333'
+            });
+        });
+    </script>
+
+    <!-- //////// Tipsy - custom Tooltips ////////  -->
+
+    <link rel="stylesheet" type="text/css" href="_layout/js/tipsy/tipsy.css"/>
+    <script type="text/javascript" src="_layout/js/tipsy/jquery.tipsy.js"></script>
+    <script type='text/javascript'>
+        $(function() {
+            $('.tip').tipsy({gravity: 'n'});
+        });
+    </script>
+
+    <!-- //////// Email Me Panel Animation ////////  -->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".emailme").click(function() {
+                $(".panel").toggle("fast");
+                $(this).toggleClass("active");
+                return false;
+            });
+        });
+    </script>
+
+    <!-- //////// Contact Form ////////  -->
+
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        $(document).ready(function() { // sends the data filled in the contact form to the php file and shows a message
+            $("#contact-form").submit(function() {
+                var str = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "_layout/php/send.php",
+                    data: str,
+                    success: function(msg) {
+                        $("#formstatus").ajaxComplete(function(event, request, settings) {
+                            if (msg == 'OK') { // Message Sent? Show the 'Thank You' message and hide the form
+                                result = '<div class="formstatusok">Your message has been sent. Thank you!</div>';
+                                $("#fields").hide();
+                            }
+                            else {
+                                result = msg;
+                            }
+                            $(this).html(result);
+                        });
+                    }
+
+                });
+                return false;
+            });
+        });
+        /* ]]> */
+    </script>
+
 </head>
 <body>
-	
-	<div id="cv">
-	
-		<!-- // ABOUT ME /////////////////////////////////////////////////////////////////// -->
-		
-		<div class="cv-section first-cv-section fixed">
-		
-			<div class="person">
-				<a class="lightbox" rel="mypics" href="_content/640x550-placeholder.jpg" title="description item 1" >
-					<img src="_content/100x100-placeholder.jpg" width="100" height="100" alt="john smith" />
-				</a>
-				<h1>Pieter Joost</h1>
-				<h2>Software craftsman</h2>
-			</div>
-			
-			<div id="contact-info">
-				<ul id="social-media">
-					<li><a href="http://twitter.com/#!/pjvds" title="Twitter Profile" class="tip"><img src="_layout/images/social-icons/twitter.png" alt="twitter icon" /></a></li>
-					<li><a href="http://nl.linkedin.com/in/pjvds" title="Linked InProfile" class="tip"><img src="_layout/images/social-icons/linkedin.png"  alt="linkedin icon" /></a></li>
-					<li><a href="http://github.com/pjvds" title="Github Profile" class="tip"><img src="_layout/images/social-icons/git.png"  alt="github me"/></a></li>
-					<li><a href="http://www.shelfari.com/pjvds" title="Shelfari Bookshelve" class="tip"><img src="_layout/images/social-icons/shelfari.png" alt="Shelfari icon" /></a></li>
-				</ul>
-				<ul>
-					<li>e: <a href="mailto:pj@craftify.nl">pj@craftify.nl</a></li>
-					<li>w: <a href="http://craftify.nl">craftify.nl</a></li>
-					<li>t: <a href="http://twitter.com/#!/pjvds">pjvds</a></li>
-					<li>p: <strong>+31 (0)6 54 22 44 89</strong></li>
-				</ul>
-			</div>
-	
-		</div><!-- end .cv-section -->
-		
-		<!-- // PROFESIONAL PROFILE //////////////////////////////////////////////////////// -->
-		
-		<div class="cv-section fixed">
-		
-			<h2 class="cv-section-name">Professional Profile</h2>
-			
-			<div class="cv-section-items">
-				
-				<div class="item last-item">
-                    <p>Pieter Joost van de Sande is een gelukkige software craftsman uit Dronten.
-					Software ontwikkeling is zijn passie. Dit uit zich in toewijding aan opdrachten, 
-					contributie aan open source projecten, het schrijven van artikelen,
-					het geven van presentaties en nauwe betrokkenheid bij de software development community.</p>
-					<p>De kern kwaliteiten van Pieter Joost zijn creatief, betrokken, energiek, enthousiast en
-					communicatief. Deze komen het beste naar voren in een dynamische omgeving waar hij samen
-					werkt in overzichtelijk team met een helder business doel, maar waar implementatie nog onbekend is.</p>
-					<p>Zaken waar Pieter Joost zich mee onderscheid zijn o.a. de ontwikkeling van het bekende
-					open source framework <a href="http://ncqrs.org">ncqrs</a>, de oprichting van de Nederlandse
-					software development community <a href="http://devnology.nl">devnology</a>, energieke presentaties
-					in zowel binnen- als buitenland en zijn inmiddels vierde prestigeuze <a href="http://mvp.support.microsoft.com/">
-					Microsoft MVP Award</a>.</p>
-				</div><!-- end .item -->
-				
-			</div><!-- end .cv-section-items -->
-			
-		</div><!-- end .cv-section -->
-		
-		<!-- // WORK EXPERINCE /////////////////////////////////////////////////////////// -->
-		
-		<div class="cv-section fixed">
-		
-			<h2 class="cv-section-name">Work Experience</h2>
-			
-			<div class="cv-section-items">
-				
-				<div class="item">
-					<h4>Maart 2009 - Present</h4>
-					<h2>Principal consultant Microsoft</h2>
-					<h3><a href="http://atos.net/">Atos</a>, Full-Time</h3>
-					<p>Atos is een internationaal informatie technologie service bedrijf
-					met 78.500 werknemers verdeeld over 42 landen. Als principal consultant Microsoft
-                    houd ik mij bezig met uitdagende projecten binnen het Microsoft domein. Daarnaast
-                    ben ik de mentor van een aantal profecionals en deel ik actief mijn kennis.
-                    Ook ben ik verantwoordelijk voor de Microsoft .NET Community in regio Middel Nederland.</p>
-                    <p>Belangrijkste taken:</p>
-					<ul>
-						<li>Een actieve bedrage leveren aan uitdagende projecten in de rol van programmeur,
-                        architect of coach.</li>
-						<li>Het coachen van een groep enthousiaste collega's en young tallents binnen Atos.</li>
-						<li>Verantwoordelijk voor de Microsoft .NET Community van regio Midden Nederland.</li>
-						<li>Het delen van kennis door middel van presentaties, workshops en artikelen.</li>
-					</ul>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Februari 2010 - Present</h4>
-					<h2>Community leader</h2>
-					<h3><a href="http://atos.net/">Atos</a>, Full-Time</h3>
-					<p>Voor Atos ben ik verantwoordelijk voor de Microsoft .NET Community in regio Middel
-                    Nederland. Mijn missie is om kennis deling en compentie ontwikkeling zo goed mogelijk
-                    te faciliteren vanuit een community gedachten. Hierin speel ik vooral een faciliterende
-                    en coachende rol waarbij ik collega's met elkaar in contact breng en help hun kennis en
-                    passie te delen.
-					</p>
-					<p>Belangrijkste taken:</p>
-					<ul>
-						<li>Het opzetten van een community faciliterend platform.</li>
-						<li>Het in contact brengen van medewerkers.</li>
-						<li>Het coachen en begeleiden van medewerkers.</li>
-						<li>Het organizeren van maandelijkse meetings.</li>
-					</ul>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Oktober 2009 - Present</h4>
-					<h2>Podcast host</h2>
-					<h3><a href="http://devnology.nl/nl/podcast/">Devnology Podcast</a></h3>
-					<p>De Devnology Podcast brengt meerdere podcasts per maand uit. De podcast richt
-					zich op de enthousiaste software ontwikkelaar. Ze probeert zich te onderscheiden
-					door alle interview fase to fase te doen in een ontspannen omgeving. Gesprekken met
-					prominente figuren uit de software ontwikkel gemeenschap of wetenschap staan centraal.</p>
-					<p>Elk interview wordt goed voorbereid en de podcasts worden altijd opgenomen met twee hosts.
-					Voor deze podcast heb ik onder andere Robert C. Martin, Rob Vens, Anders Heijlsberg 
-					en Frans Bouma mogen interviewen.</p>
-					<p>Belangrijkste taken:</p>
-					<ul>
-            <li>Het voorbereiden van interviews door het lezen van boeken en onderzoekresultaten.</li>
-            <li>Het vinden en uitnodigen van met prominenten uit ons vakgebied of gerelateerde wetenschap.</li>
-					</ul>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Oktober 2008 - Present</h4>
-					<h2>Founder en vicevoorzitter</h2>
-					<h3><a href="http://devnology.nl/">Devnology</a></h3>
-					<br />
-					<p>Devnology is een stichting die zich op de mogelijkheid voor software ontwikkelaars in 
-					Nederland om kennis en ervaring uitwisselen. Devnology heeft verder als doel om de 
-					kloof tussen theorie en praktijk van softwareontwikkeling. De maandelijkse bijeenkomsten zijn 
-					gericht op algemene concepten van software ontwikkeling en zijn niet beperkt tot een specifieke 
-					taal of platform, maar eerder gericht op het verkennen van de verschillen tussen hen.
-					</p>
-					<p>Ik heb Devnology opgericht vanuit de visie dat software ontwikkelaars snel in een soort tunnelvisie
-					terecht komen. Dit door het lang werken met dezelfde taal of binnen hetzelfde platform. Inmiddels
-					is het bestuur 4 man sterk, organizeren wij maandelijks een meeting en hebben we een succesvolle podcast.</p>
-					<p>Belangrijkste taken:</p>
-					<ul>
-						<li>Het vinden van sponsoren en het onderhouden van de relatie.</li>
-						<li>Het vinden van sprekers en het onderhouden van de relatie.</li>
-						<li>Het beheren en onderhouden van de website.</li>
-					</ul>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Juni 2010 - Present</h4>
-					<h2>Microsoft .NET Developer</h2>
-					<h3><a href="http://robeco.nl/">Robeco Asset Management</a>, Full-Time</h3>
-					<p>Robeco is een Nederlandse vermogensbeheerder met 1500 medewerkers verdeeld over 20 kantoren over
-					de hele wereld. Ze beheren een portefeuille van 130 miljard euro. Robeco onderscheid zich door haar
-                    dynamische omgeving.</p>
-                    <p>Vanuit het End User Computing team heb ik verschillende applicaties ontwikkeld
-                    voor eindgebruikers. Interessant aan deze omgeving was het directe contact met eindgebruikers,
-                    ontwikkelend in kort ciclie en de verantwoording voor het project van begin tot het eind. Daarnaast
-                    stond verbeteren door reflectie centraal. Er waren meerdere bijeenkomsten per week om als individu
-                    en team te reflecteren. Verbeteren stond hier centraal en er was veel ruimte om nieuwe zaken uit
-                    te proberen.</p>
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Juni 2010 - September 2010</h4>
-					<h2>Technical lead</h2>
-					<h3><a href="http://robeco.nl/">Robeco Asset Management</a>, Full-Time</h3>
-				    <p>Robeco is een Nederlandse vermogensbeheerder met 1500 medewerkers verdeeld over 20 kantoren over
-					de hele wereld. Ze beheren een portefeuille van 130 miljard euro. Robeco onderscheid zich door haar
-                    dynamische omgeving.</p>
-                    <p>Vanuit de Global IT Services afdeling ben ik betrokken geweest bij een prestigieuze Enterprise
-                    Data Management project. Het doel was om alle data bronnen binnen Robeco via Cadis binnen te halen,
-                    te valideren, samen te voegen en tot een enkel canonieke data structuur waar vanuit alle data
-                    behoefte kan worden vervult. Dit om kosten te besparen, data integriteit te verhogen en
-                    de beheersbaarheid van data stromen te verhogen.</p>
-                    <p>In het project was ik verantwoordelijk voor de kwaliteit van de ontwikkelingen binnen Cadis. Hiervoor
-                    heb ik standaarden opgesteld, reviewde ik ontwikkelde componenten en heb ik een automated test server
-                    ingericht met Team City.</p>
-                    <p></p>
-					<ul>
-						<li>Het opstellen en controleren van kwaliteitsstandaarden.</li>
-						<li>Het reviewen van implementaties.</li>
-						<li>Het ontwikkelen van Cadis componenten.</li>
-                        <li>Het opzetten en inrichten van een automated test server.</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>April 2007 - Februari 2011</h4>
-					<h2>Bestuurslid</h2>
-					<h3><a href="http://dotned.nl/">dotNed</a></h3>
-                    <p>dotNed is een stichting die zich richt op .NET ontwikkelaars door het organiseren van maandelijkse
-                    bijeenkomsten. Deze bijeenkomsten zijn er op gericht om ontwikkelaars te laten leren van presentatie
-                    gegeven door community leden en experts uit onze vakgebied.</p>
-                    <p>Bij dotNed was ik verantwoordelijk voor de locatie sponsors en sprekers.</p>
-                    <p>Belangrijkste taken:</p>
-                    <ul>
-					    <li>Het vinden van sponsoren en het onderhouden van de relatie.</li>
-						<li>Het vinden van sprekers en het onderhouden van de relatie.</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Februari 2010 - Juni 2010</h4>
-					<h2>Innovatie consultant</h2>
-					<h3><a href="http://interpolis.nl/">Interpolis</a></h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Juli 2009 - Januari 2010</h4>
-					<h2>Microsoft .NET consultant</h2>
-					<h3><a href="http://umcn.nl/">Radboud University Nijmegen Medical Centre</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>March 2009 - Juli 2009</h4>
-					<h2>Microsoft .NET developer</h2>
-					<h3><a href="http://achmea.nl/">Achmea</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Augustus 2008 - Februari 2009</h4>
-					<h2>Lead developer</h2>
-					<h3><a href="http://vanbrug.nl/">Achmea</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>December 2007 - Februari 2009</h4>
-					<h2>IT consultant &amp; speaker</h2>
-					<h3><a href="http://sogyo.nl/">Sogyo</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Juli 2008 - September 2008</h4>
-					<h2>Software architect</h2>
-					<h3><a href="http://inholland.nl/">INHolland</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Juni 2008 - July 2008</h4>
-					<h2>Technical lead</h2>
-					<h3><a href="http://dhiyo.com/">dhiyo</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Augustus 2006 - december 2007</h4>
-					<h2>Software developer</h2>
-					<h3><a href="http://detrio.nl/">Detrio</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>December 2006 - December 2007</h4>
-					<h2>ABN AMRO</h2>
-					<h3><a href="http://abnamro.nl/">ABN AMRO</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				
-				<div class="item">
-					<h4>Augustus 2006 - December 2006</h4>
-					<h2>Technical lead</h2>
-					<h3><a href="http://menzis.nl/">Menzis</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>				
 
-				<div class="item last-item">
-					<h4>November 2004 - September 2006</h4>
-					<h2>Technical lead</h2>
-					<h3><a href="http://www.wfeg.eu/">Max BV</a>, tegenwoordig WFEG</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
+<div id="cv">
 
-				<div class="item last-item">
-					<h4>Augustus 2002 - November 2004</h4>
-					<h2>Software developer</h2>
-					<h3><a href="http://www.qusoft.nl/">Qusoft</a>, Full-Time</h3>
-					<br />
-					<ul>
-						<li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
-						<li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
-						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-					</ul>
-				</div>
-				<!-- end .item -->
-				
-			</div><!-- end .cv-section-items -->
-			
-		</div><!-- end .cv-section -->
-		
-		<!-- // TEHNICAL SKILLS /////////////////////////////////////////////////////////// -->
-		
-		<div class="cv-section fixed">
-		
-			<h2 class="cv-section-name">Technical Skills</h2>
-			
-			<div class="cv-section-items">
-				
-				<div class="item">
-					<h4>Expert</h4>
-					<h2><a href="#">Microsoft C#</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Expert</h4>
-					<h2><a href="#">Visual Studio .NET</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Expert</h4>
-					<h2><a href="#">Relationele databases</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Expert</h4>
-					<h2><a href="#">Relationele databases</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Advanced</h4>
-					<h2><a href="#">Continues integration</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Advanced</h4>
-					<h2><a href="#">(distributed) Source control</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Advanced</h4>
-					<h2><a href="#">Object orientatie</a></h2>
-				</div><!-- end .item -->
-				
-				<div class="item">
-					<h4>Advanced, 2 years</h4>
-					<h2><a href="#">Javascript</a></h2>
-					<br />
-					<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-					 ridiculus mus. Proin sed elit a mauris pretium molestie.</p>
-					<p>Aliquam fringilla ullamcorper sollicitudin. Nunc pharetra fermentum 
-					suscipit.</p>
-				</div><!-- end .item -->
-				
-				<div class="item last-item">
-					<h4>Beginner, 1 year</h4>
-					<h2><a href="#">jQuery Framework</a></h2>
-					<br />
-					<p>In mauris urna, cursus eget condimentum ac, vestibulum nec magna.
-					 Maecenas luctus interdum mauris, pellentesque semper quam sollicitudin eu.
-					 Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-					<p>Pellentesque elementum hendrerit pretium. Nam a lacus risus. Ut purus
-					leo, feugiat in volutpat non, ultricies vitae lectus.</p>	
-				</div><!-- end .item -->
-				
-			</div><!-- end .cv-section-items -->
-			
-		</div><!-- end .cv-section -->
-		
-		<!-- // EDUCATION ////////////////////////////////////////////////////////////////// -->
-		
-		<div class="cv-section last-cv-section fixed">
-		
-			<h2 class="cv-section-name">Education</h2>
-			
-			<div class="cv-section-items">
-				
-				<div class="item last-item">
-					<h2>Boston State University</h2>
-					<h3>Dual Major, Web Design and English — 3.9 GPA</h3>
-					<br />
-					<p>Aenean a pellentesque tortor. Praesent justo nibh, tempus vel
-					 scelerisque eget, tempus id quam. Praesent egestas nulla sit amet
-					 nulla cursus a lobortis lorem pulvinar. Maecenas venenatis, elit
-					 et viverra ultrices, mauris justo rutrum orcis.</p>	
-				</div><!-- end .item -->
-				
-			</div><!-- end .cv-section-items -->
-			
-		</div><!-- end .cv-section -->
-		
-		<!-- ////////////////////////////////////////////////////////////////////////////// -->
-	
-	</div><!-- end #cv -->
-	
-	<div class="panel">
-		
-		<p id="formstatus"></p>
-		<form id="contact-form" action="javascript:alert('success!');">
-			<fieldset>
-				<p>
-					<input class="textbox" type="text" name="name" value="Name*"
-					onfocus="if(this.value=='Name*')this.value='';" onblur="if(this.value=='')this.value='Name*';" />
-				</p>
-				<p>
-					<input class="textbox" type="text" name="email" value="Email*"
-					onfocus="if(this.value=='Email*')this.value='';" onblur="if(this.value=='')this.value='Email*';" />
-				</p>
-				<p>
-					<input class="textbox" type="text" name="subject" value="Subject*"  
-					onfocus="if(this.value=='Subject*')this.value='';" onblur="if(this.value=='')this.value='Subject*';"/>
-				</p>
-				<p>
-					<textarea class="textbox" name="message" rows="3" cols="25"></textarea>
-				</p>
-				<p>
-					<input class="btn" type="submit" name="submit" value="Send!" />
-					<!--<input class="btn" type="reset" name="submit" value="Reset" />-->
-				</p>
-			</fieldset>
-		</form><!-- end #contact-form -->
+<!-- // ABOUT ME /////////////////////////////////////////////////////////////////// -->
 
-	</div><!-- end .panel -->
-	
-	<br />
-	<br />
-	
-	<a class="emailme" href="#">Email Me</a>
+<div class="cv-section first-cv-section fixed">
 
-	<script type="text/javascript"> Cufon.now(); </script>
-	
-	<script type="text/javascript">
+    <div class="person">
+        <a class="lightbox" rel="mypics" href="_content/640x550-placeholder.jpg" title="description item 1">
+            <img src="_content/100x100-placeholder.jpg" width="100" height="100" alt="john smith"/>
+        </a>
+
+        <h1>Pieter Joost</h1>
+
+        <h2>Software craftsman</h2>
+    </div>
+
+    <div id="contact-info">
+        <ul id="social-media">
+            <li><a href="http://twitter.com/#!/pjvds" title="Twitter Profile" class="tip"><img
+                    src="_layout/images/social-icons/twitter.png" alt="twitter icon"/></a></li>
+            <li><a href="http://nl.linkedin.com/in/pjvds" title="Linked InProfile" class="tip"><img
+                    src="_layout/images/social-icons/linkedin.png" alt="linkedin icon"/></a></li>
+            <li><a href="http://github.com/pjvds" title="Github Profile" class="tip"><img
+                    src="_layout/images/social-icons/git.png" alt="github me"/></a></li>
+            <li><a href="http://www.shelfari.com/pjvds" title="Shelfari Bookshelve" class="tip"><img
+                    src="_layout/images/social-icons/shelfari.png" alt="Shelfari icon"/></a></li>
+        </ul>
+        <ul>
+            <li>e: <a href="mailto:pj@craftify.nl">pj@craftify.nl</a></li>
+            <li>w: <a href="http://craftify.nl">craftify.nl</a></li>
+            <li>t: <a href="http://twitter.com/#!/pjvds">pjvds</a></li>
+            <li>p: <strong>+31 (0)6 54 22 44 89</strong></li>
+        </ul>
+    </div>
+
+</div>
+<!-- end .cv-section -->
+
+<!-- // PROFESIONAL PROFILE //////////////////////////////////////////////////////// -->
+
+<div class="cv-section fixed">
+
+    <h2 class="cv-section-name">Professional Profile</h2>
+
+    <div class="cv-section-items">
+
+        <div class="item last-item">
+            <p>Pieter Joost van de Sande is een gelukkige software craftsman uit Dronten.
+                Software ontwikkeling is zijn passie. Dit uit zich in toewijding aan opdrachten,
+                contributie aan open source projecten, het schrijven van artikelen,
+                het geven van presentaties en nauwe betrokkenheid bij de software development community.</p>
+
+            <p>De kern kwaliteiten van Pieter Joost zijn creatief, betrokken, energiek, enthousiast en
+                communicatief. Deze komen het beste naar voren in een dynamische omgeving waar hij samen
+                werkt in overzichtelijk team met een helder business doel, maar waar implementatie nog onbekend is.</p>
+
+            <p>Zaken waar Pieter Joost zich mee onderscheid zijn o.a. de ontwikkeling van het bekende
+                open source framework <a href="http://ncqrs.org">ncqrs</a>, de oprichting van de Nederlandse
+                software development community <a href="http://devnology.nl">devnology</a>, energieke presentaties
+                in zowel binnen- als buitenland en zijn inmiddels vierde prestigeuze <a
+                        href="http://mvp.support.microsoft.com/">
+                    Microsoft MVP Award</a>.</p>
+        </div>
+        <!-- end .item -->
+
+    </div>
+    <!-- end .cv-section-items -->
+
+</div>
+<!-- end .cv-section -->
+
+<!-- // WORK EXPERINCE /////////////////////////////////////////////////////////// -->
+
+<div class="cv-section fixed">
+
+<h2 class="cv-section-name">Work Experience</h2>
+
+<div class="cv-section-items">
+
+<div class="item">
+    <h4>Maart 2009 - Present</h4>
+
+    <h2>Principal consultant Microsoft</h2>
+
+    <h3><a href="http://atos.net/">Atos</a>, Full-Time</h3>
+
+    <p>Atos is een internationaal informatie technologie service bedrijf
+        met 78.500 werknemers verdeeld over 42 landen. Als principal consultant Microsoft
+        houd ik mij bezig met uitdagende projecten binnen het Microsoft domein. Daarnaast
+        ben ik de mentor van een aantal profecionals en deel ik actief mijn kennis.
+        Ook ben ik verantwoordelijk voor de Microsoft .NET Community in regio Middel Nederland.</p>
+
+    <p>Belangrijkste taken:</p>
+    <ul>
+        <li>Een actieve bedrage leveren aan uitdagende projecten in de rol van programmeur,
+            architect of coach.
+        </li>
+        <li>Het coachen van een groep enthousiaste collega's en young tallents binnen Atos.</li>
+        <li>Verantwoordelijk voor de Microsoft .NET Community van regio Midden Nederland.</li>
+        <li>Het delen van kennis door middel van presentaties, workshops en artikelen.</li>
+    </ul>
+</div>
+<!-- end .item -->
+
+<div class="item">
+    <h4>Februari 2010 - Present</h4>
+
+    <h2>Community leader</h2>
+
+    <h3><a href="http://atos.net/">Atos</a>, Full-Time</h3>
+
+    <p>Voor Atos ben ik verantwoordelijk voor de Microsoft .NET Community in regio Middel
+        Nederland. Mijn missie is om kennis deling en compentie ontwikkeling zo goed mogelijk
+        te faciliteren vanuit een community gedachten. Hierin speel ik vooral een faciliterende
+        en coachende rol waarbij ik collega's met elkaar in contact breng en help hun kennis en
+        passie te delen.
+    </p>
+
+    <p>Belangrijkste taken:</p>
+    <ul>
+        <li>Het opzetten van een community faciliterend platform.</li>
+        <li>Het in contact brengen van medewerkers.</li>
+        <li>Het coachen en begeleiden van medewerkers.</li>
+        <li>Het organizeren van maandelijkse meetings.</li>
+    </ul>
+</div>
+<!-- end .item -->
+
+<div class="item">
+    <h4>Oktober 2009 - Present</h4>
+
+    <h2>Podcast host</h2>
+
+    <h3><a href="http://devnology.nl/nl/podcast/">Devnology Podcast</a></h3>
+
+    <p>De Devnology Podcast brengt meerdere podcasts per maand uit. De podcast richt
+        zich op de enthousiaste software ontwikkelaar. Ze probeert zich te onderscheiden
+        door alle interview fase to fase te doen in een ontspannen omgeving. Gesprekken met
+        prominente figuren uit de software ontwikkel gemeenschap of wetenschap staan centraal.</p>
+
+    <p>Elk interview wordt goed voorbereid en de podcasts worden altijd opgenomen met twee hosts.
+        Voor deze podcast heb ik onder andere Robert C. Martin, Rob Vens, Anders Heijlsberg
+        en Frans Bouma mogen interviewen.</p>
+
+    <p>Belangrijkste taken:</p>
+    <ul>
+        <li>Het voorbereiden van interviews door het lezen van boeken en onderzoekresultaten.</li>
+        <li>Het vinden en uitnodigen van met prominenten uit ons vakgebied of gerelateerde wetenschap.</li>
+    </ul>
+</div>
+<!-- end .item -->
+
+<div class="item">
+    <h4>Oktober 2008 - Present</h4>
+
+    <h2>Founder en vicevoorzitter</h2>
+
+    <h3><a href="http://devnology.nl/">Devnology</a></h3>
+    <br/>
+
+    <p>Devnology is een stichting die zich op de mogelijkheid voor software ontwikkelaars in
+        Nederland om kennis en ervaring uitwisselen. Devnology heeft verder als doel om de
+        kloof tussen theorie en praktijk van softwareontwikkeling. De maandelijkse bijeenkomsten zijn
+        gericht op algemene concepten van software ontwikkeling en zijn niet beperkt tot een specifieke
+        taal of platform, maar eerder gericht op het verkennen van de verschillen tussen hen.
+    </p>
+
+    <p>Ik heb Devnology opgericht vanuit de visie dat software ontwikkelaars snel in een soort tunnelvisie
+        terecht komen. Dit door het lang werken met dezelfde taal of binnen hetzelfde platform. Inmiddels
+        is het bestuur 4 man sterk, organizeren wij maandelijks een meeting en hebben we een succesvolle podcast.</p>
+
+    <p>Belangrijkste taken:</p>
+    <ul>
+        <li>Het vinden van sponsoren en het onderhouden van de relatie.</li>
+        <li>Het vinden van sprekers en het onderhouden van de relatie.</li>
+        <li>Het beheren en onderhouden van de website.</li>
+    </ul>
+</div>
+<!-- end .item -->
+
+<div class="item">
+    <h4>Juni 2010 - Present</h4>
+
+    <h2>Microsoft .NET Developer</h2>
+
+    <h3><a href="http://robeco.nl/">Robeco Asset Management</a>, Full-Time</h3>
+
+    <p>Robeco is een Nederlandse vermogensbeheerder met 1500 medewerkers verdeeld over 20 kantoren over
+        de hele wereld. Ze beheren een portefeuille van 130 miljard euro. Robeco onderscheid zich door haar
+        dynamische omgeving.</p>
+
+    <p>Vanuit het End User Computing team heb ik verschillende applicaties ontwikkeld
+        voor eindgebruikers. Interessant aan deze omgeving was het directe contact met eindgebruikers,
+        ontwikkeling in korte iteraties en de verantwoording voor het project van begin tot het eind. Daarnaast
+        stond verbeteren door reflectie centraal. Er waren meerdere bijeenkomsten per week om als individu
+        en team te reflecteren. Hier stond verbeteren centraal en er was veel ruimte om ideeën uit te proberen.</p>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Juni 2010 - September 2010</h4>
+
+    <h2>Technical lead</h2>
+
+    <h3><a href="http://robeco.nl/">Robeco Asset Management</a>, Full-Time</h3>
+
+    <p>Robeco is een Nederlandse vermogensbeheerder met 1500 medewerkers verdeeld over 20 kantoren over
+        de hele wereld. Robeco beheerd een portefeuille van 130 miljard euro en onderscheid zich door dynamic.</p>
+
+    <p>Vanuit de Global IT Services afdeling ben ik betrokken geweest bij een prestigieuze Enterprise
+        Data Management project. Het doel was om alle data bronnen binnen Robeco via Cadis binnen te laten komen,
+        te valideren, samen te voegen tot in een canonieke structuur en te verrijken. Vanuit dit universum werdt
+        naar behoefte data klaargemaakt voor verschillende systemen. Dit om kosten te besparen, data integriteit
+        te verhogen en de beheersbaarheid van data stromen te verhogen.</p>
+
+    <p>In dit project was ik verantwoordelijk voor de kwaliteit van de technische implementatie. Daarnaast ontwikkelde
+        ik componenten binnen Cadis die voornamelijk leunt op een eigen transformatie en rule engine.</p>
+    
+    <p>Belangrijkste taken:</p>
+    <ul>
+        <li>Het opstellen en controleren van kwaliteitsstandaarden.</li>
+        <li>Het reviewen van implementaties.</li>
+        <li>Het ontwikkelen van Cadis componenten.</li>
+        <li>Het opzetten en inrichten van een automated test server.</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>April 2007 - Februari 2011</h4>
+
+    <h2>Bestuurslid</h2>
+
+    <h3><a href="http://dotned.nl/">dotNed</a></h3>
+
+    <p>dotNed is een stichting die zich richt op .NET ontwikkelaars door het organiseren van maandelijkse
+        bijeenkomsten. Deze bijeenkomsten zijn er op gericht om ontwikkelaars te laten leren van presentatie
+        gegeven door community leden en experts uit onze vakgebied.</p>
+
+    <p>Bij dotNed was ik verantwoordelijk voor de locatie sponsors en sprekers.</p>
+
+    <p>Belangrijkste taken:</p>
+    <ul>
+        <li>Het vinden van sponsoren en het onderhouden van de relatie.</li>
+        <li>Het vinden van sprekers en het onderhouden van de relatie.</li>
+        <li>Het volgen van markttrends en ontwikkelingen om het aanbod fris en relevant te houden.</li>
+        <li>Het onderhouden van contacten met partners als Microsoft Nederland.</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Februari 2010 - Juni 2010</h4>
+
+    <h2>Innovatie consultant</h2>
+
+    <h3><a href="http://interpolis.nl/">Interpolis</a></h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Juli 2009 - Januari 2010</h4>
+
+    <h2>Microsoft .NET consultant</h2>
+
+    <h3><a href="http://umcn.nl/">Radboud University Nijmegen Medical Centre</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>March 2009 - Juli 2009</h4>
+
+    <h2>Microsoft .NET developer</h2>
+
+    <h3><a href="http://achmea.nl/">Achmea</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Augustus 2008 - Februari 2009</h4>
+
+    <h2>Lead developer</h2>
+
+    <h3><a href="http://vanbrug.nl/">Van Brug</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>December 2007 - Februari 2009</h4>
+
+    <h2>IT consultant &amp; spreker</h2>
+
+    <h3><a href="http://sogyo.nl/">Sogyo</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Juli 2008 - September 2008</h4>
+
+    <h2>Software architect</h2>
+
+    <h3><a href="http://inholland.nl/">INHolland</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Juni 2008 - July 2008</h4>
+
+    <h2>Technical lead</h2>
+
+    <h3><a href="http://dhiyo.com/">dhiyo</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Augustus 2006 - december 2007</h4>
+
+    <h2>Software developer</h2>
+
+    <h3><a href="http://detrio.nl/">Detrio</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>December 2006 - December 2007</h4>
+
+    <h2>ABN AMRO</h2>
+
+    <h3><a href="http://abnamro.nl/">ABN AMRO</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item">
+    <h4>Augustus 2006 - December 2006</h4>
+
+    <h2>Technical lead</h2>
+
+    <h3><a href="http://menzis.nl/">Menzis</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item last-item">
+    <h4>November 2004 - September 2006</h4>
+
+    <h2>Technical lead</h2>
+
+    <h3><a href="http://www.wfeg.eu/">Max BV</a>, tegenwoordig WFEG</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+
+<div class="item last-item">
+    <h4>Augustus 2002 - November 2004</h4>
+
+    <h2>Software developer</h2>
+
+    <h3><a href="http://www.qusoft.nl/">Qusoft</a>, Full-Time</h3>
+    <br/>
+    <ul>
+        <li>Nunc in dolor id lacus dictum euismod molestie ut tortor</li>
+        <li>Donec eget nunc pulvinar tortor sollicitudin consectetur id eget eros</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+    </ul>
+</div>
+<!-- end .item -->
+
+</div>
+<!-- end .cv-section-items -->
+
+</div>
+<!-- end .cv-section -->
+
+<!-- // TEHNICAL SKILLS /////////////////////////////////////////////////////////// -->
+
+<div class="cv-section fixed">
+
+    <h2 class="cv-section-name">Technical Skills</h2>
+
+    <div class="cv-section-items">
+
+        <div class="item">
+            <h4>Expert</h4>
+
+            <h2><a href="#">Programming languages</a></h2>
+            <p>De programmeertalen die in mijn cariere een grote rol hebben gespeeld zijn: Microsoft C# .NET,
+                JavaScript, Visual Basic 6, Visual Basic .NET, Java, ColdFusion en ObjectiveC.</p>
+            <p>Andere talen die mijn aandacht hebben getrokken of in een kleine maten een rol hebben gespeeld
+            zijn: Smalltalk, LISP en Closure.</p>
+            </p>
+        </div>
+        <!-- end .item -->
+
+        <div class="item">
+            <h4>Expert</h4>
+
+            <h2><a href="#">Integrated development environment</a></h2>
+            <p>De IDE's en major add-ins die in mijn cariere een grote rol hebben gespreeld zijn: Visual Studio .NET,
+                Visual Studio, AutoTest, NUnit, JUnit, NCover, WebStorm, CodeX
+            en Eclipse</p>
+        </div>
+        <!-- end .item -->
+
+        <div class="item">
+            <h4>Expert</h4>
+
+            <h2><a href="#">Databases</a></h2>
+            <p>De relationele databases die in mijn cariere een grote rol hebben gespeeld zijn: Microsoft SQL Server,
+            Oracle, MySQL en ProgressSQL</p>.
+            <p>Andere databases die mijn aandacht hebben getrokken of in kleine maten een rol hebben gespeeld zijn:
+            MongoDB, CouchDB, SQL Azure, Amazon en BLOB Azure.</p>
+        </div>
+        <!-- end .item -->
+
+        <div class="item">
+            <h4>Advanced</h4>
+
+            <h2><a href="#">Continues integration</a></h2>
+        </div>
+        <!-- end .item -->
+
+        <div class="item">
+            <h4>Advanced</h4>
+
+            <h2><a href="#">(distributed) Source control</a></h2>
+        </div>
+        <!-- end .item -->
+
+        <div class="item">
+            <h4>Advanced</h4>
+
+            <h2><a href="#">Object orientatie</a></h2>
+        </div>
+        <!-- end .item -->
+
+        <div class="item">
+            <h4>Advanced, 2 years</h4>
+
+            <h2><a href="#">Javascript</a></h2>
+            <br/>
+
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Proin sed elit a mauris pretium molestie.</p>
+
+            <p>Aliquam fringilla ullamcorper sollicitudin. Nunc pharetra fermentum
+                suscipit.</p>
+        </div>
+        <!-- end .item -->
+
+        <div class="item last-item">
+            <h4>Beginner, 1 year</h4>
+
+            <h2><a href="#">jQuery Framework</a></h2>
+            <br/>
+
+            <p>In mauris urna, cursus eget condimentum ac, vestibulum nec magna.
+                Maecenas luctus interdum mauris, pellentesque semper quam sollicitudin eu.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
+
+            <p>Pellentesque elementum hendrerit pretium. Nam a lacus risus. Ut purus
+                leo, feugiat in volutpat non, ultricies vitae lectus.</p>
+        </div>
+        <!-- end .item -->
+
+    </div>
+    <!-- end .cv-section-items -->
+
+</div>
+<!-- end .cv-section -->
+
+<!-- // EDUCATION ////////////////////////////////////////////////////////////////// -->
+
+<div class="cv-section last-cv-section fixed">
+
+    <h2 class="cv-section-name">Education</h2>
+
+    <div class="cv-section-items">
+
+        <div class="item last-item">
+            <h2>Boston State University</h2>
+
+            <h3>Dual Major, Web Design and English — 3.9 GPA</h3>
+            <br/>
+
+            <p>Aenean a pellentesque tortor. Praesent justo nibh, tempus vel
+                scelerisque eget, tempus id quam. Praesent egestas nulla sit amet
+                nulla cursus a lobortis lorem pulvinar. Maecenas venenatis, elit
+                et viverra ultrices, mauris justo rutrum orcis.</p>
+        </div>
+        <!-- end .item -->
+
+    </div>
+    <!-- end .cv-section-items -->
+
+</div>
+<!-- end .cv-section -->
+
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+
+</div>
+<!-- end #cv -->
+
+<div class="panel">
+
+    <p id="formstatus"></p>
+
+    <form id="contact-form" action="javascript:alert('success!');">
+        <fieldset>
+            <p>
+                <input class="textbox" type="text" name="name" value="Name*"
+                       onfocus="if(this.value=='Name*')this.value='';" onblur="if(this.value=='')this.value='Name*';"/>
+            </p>
+
+            <p>
+                <input class="textbox" type="text" name="email" value="Email*"
+                       onfocus="if(this.value=='Email*')this.value='';"
+                       onblur="if(this.value=='')this.value='Email*';"/>
+            </p>
+
+            <p>
+                <input class="textbox" type="text" name="subject" value="Subject*"
+                       onfocus="if(this.value=='Subject*')this.value='';"
+                       onblur="if(this.value=='')this.value='Subject*';"/>
+            </p>
+
+            <p>
+                <textarea class="textbox" name="message" rows="3" cols="25"></textarea>
+            </p>
+
+            <p>
+                <input class="btn" type="submit" name="submit" value="Send!"/>
+                <!--<input class="btn" type="reset" name="submit" value="Reset" />-->
+            </p>
+        </fieldset>
+    </form>
+    <!-- end #contact-form -->
+
+</div>
+<!-- end .panel -->
+
+<br/>
+<br/>
+
+<a class="emailme" href="#">Email Me</a>
+
+<script type="text/javascript"> Cufon.now(); </script>
+
+<script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-25546409-1']);
     _gaq.push(['_trackPageview']);
 
     (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
     })();
-  </script>
-	
+</script>
+
 </body>
 </html>
